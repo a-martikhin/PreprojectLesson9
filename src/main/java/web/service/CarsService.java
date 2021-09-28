@@ -1,14 +1,15 @@
-package web.dao;
+package web.service;
 
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.stereotype.Service;
 import web.models.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 @Component
-public class CarsDAO {
+public class CarsService {
     private List<Car> cars;
     {
         cars = new ArrayList<>();
@@ -19,14 +20,10 @@ public class CarsDAO {
         cars.add(new Car("Lada", "Yellow", "1.6"));
     }
 
-    public List<Car> index(){
-            return cars;
-    }
-
-    public List<Car> result(int count){
-        List<Car> result = new ArrayList<>();
+    public List<Car> getCarsOnRequest(int count){
+        List<Car> resultListOfCar = new ArrayList<>();
         if(count < 5 && count > 0){
-            return result = cars.subList(0,count);
+            return resultListOfCar = cars.subList(0,count);
         } else{
             return cars;
         }
