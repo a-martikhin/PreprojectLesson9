@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cars</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=cp1251"/>
+</head>
+<h1>Машины</h1>
+<table>
+    <tr>
+        <th>Название</th>
+        <th>Цвет</th>
+        <th>Двигатель</th>
+
+    <tr th:each="cars : ${cars}">
+        <td th:text="${cars.name}"></td>
+        <td th:text="${cars.color}"></td>
+        <td th:text="${cars.engine}"></td>
+    </tr>
+    </tr>
+</table>
+<p>
+    <a href="/">Вернуться на стартовую страницу</a>
+</p>
+</body>
+</html>
